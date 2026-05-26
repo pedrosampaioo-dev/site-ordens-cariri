@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Navbar, Footer } from './components/shared';
 import Hero from './sections/Hero';
 import SobreOrdens from './sections/SobreOrdens';
-import LocalCariri from './sections/LocalCariri';
+import NossasOrganizacoes from './sections/NossasOrganizacoes';
 import Lideranca from './sections/Lideranca';
 import ConhecerOrdens from './sections/ConhecerOrdens';
 import Reunioes from './sections/Reunioes';
@@ -65,7 +65,7 @@ export default function App() {
       />
       <Hero />
       <SobreOrdens />
-      <LocalCariri />
+      <NossasOrganizacoes />
       <Lideranca />
       <ConhecerOrdens onSelect={setCurrentPage} />
       <Reunioes />

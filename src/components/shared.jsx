@@ -73,7 +73,7 @@ export function Navbar({ onHome, onContato, variant = "home" }) {
 
   const links = variant === "home" ? [
     { label: "Nossa História", href: "#sobre" },
-    { label: "O Vale",         href: "#vale" },
+    { label: "Organizações",    href: "#organizacoes" },
     { label: "Liderança",      href: "#lideranca" },
     { label: "As Ordens",      href: "#conhecer" },
     { label: "Contato",        href: "#contato" },
