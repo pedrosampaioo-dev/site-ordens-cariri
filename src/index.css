@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 60px 10px rgba(230,191,82,0.25), inset 0 0 40px rgba(230,191,82,0.15); }
+  50%       { box-shadow: 0 0 100px 20px rgba(230,191,82,0.45), inset 0 0 60px rgba(230,191,82,0.25); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45%      { opacity: 0.92; }
+  50%      { opacity: 0.86; }
+  55%      { opacity: 0.94; }
+}
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { transform: translateY(-120px) translateX(8px); opacity: 0; }
+}
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50%      { transform: translateY(10px); opacity: 1; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+html { scroll-behavior: smooth; background: #1a0507; }
+body { background: #1a0507; }
+
+.bg-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(230,191,82,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.4;
+}
