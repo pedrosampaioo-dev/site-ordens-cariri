@@ -25,7 +25,7 @@ export default function App() {
 
   useEffect(() => {
     const titles = {
-      home: "Ordens de Aperfeiçoamento do Cariri",
+      home: "Ordens de Aperfeiçoamento no Cariri",
       marca: "Mestres Maçons da Marca · Ordens Cariri",
       nautas: "Nautas da Arca Real · Ordens Cariri",
       sar: "Sagrado Arco Real · Ordens Cariri",

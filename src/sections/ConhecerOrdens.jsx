@@ -85,11 +85,11 @@ export default function ConhecerOrdens({ onSelect }) {
       {/* Textura */}
       <img src="assets/fundo_vermelho.svg" aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.20 }} />
+        style={{ opacity: 0.30 }} />
 
       {/* Gradiente radial topo */}
-      <div className="absolute inset-0 pointer-events-none opacity-50"
-        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(122,18,22,0.5) 0%, transparent 60%)" }} />
+      <div className="absolute inset-0 pointer-events-none opacity-60"
+        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(155,22,28,0.60) 0%, transparent 60%)" }} />
 
       {/* Linha decorativa topo */}
       <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
@@ -108,11 +108,11 @@ export default function ConhecerOrdens({ onSelect }) {
           <SectionLabel>As Ordens</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 mb-6 sm:mb-8 leading-tight">
             Seis caminhos,
-            <br />um só Templo
+            
           </h2>
           <p className="font-serif text-lg md:text-xl text-amber-50/70 italic max-w-3xl mx-auto leading-relaxed">
-            Cada Ordem é um pórtico. Atravessá-lo é descobrir-se outro — sem
-            jamais deixar de ser o mesmo.
+            Cada Ordem é um pórtico, Atravessá-lo é descobrir
+            uma nova jornada de conhecimentos
           </p>
         </motion.div>
 

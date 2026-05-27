@@ -69,20 +69,11 @@ export default function Contato() {
   };
 
   return (
-    <section id="contato" className="relative py-16 sm:py-20 lg:py-36 bg-carmesim-900 overflow-hidden">
+    <section id="contato" className="relative py-16 sm:py-20 lg:py-36 bg-amber-50 overflow-hidden">
 
-      {/* Textura */}
-      <img src="assets/fundo_vermelho.svg" aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.22 }} />
-
-      {/* Brilho dourado central */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(230,191,82,0.06) 0%, transparent 60%)" }} />
-
-      {/* Gradiente inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-        style={{ background: "linear-gradient(to top, rgba(10,2,3,0.5), transparent)" }} />
+      {/* Vinheta suave nas bordas */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(210,195,165,0.25) 100%)" }} />
 
       <div className="relative max-w-3xl mx-auto px-6 lg:px-10">
 
@@ -125,12 +116,8 @@ export default function Contato() {
             <Emblema size={88} ring={false} glow={false} />
             <SectionLabel>Petição</SectionLabel>
             <h2 className="font-display text-3xl md:text-4xl text-ouro-300 mt-5 mb-4 leading-tight">
-              Bater à porta do Templo
+              Entre em contato
             </h2>
-            <p className="font-serif italic text-amber-50/65 max-w-xl">
-              Aquele que busca, primeiro escreve. Os Veneráveis avaliarão sua
-              missiva com a discrição que a Tradição exige.
-            </p>
 
             {/* Divisor ornamental */}
             <div className="flex items-center gap-3 mt-6">
@@ -157,6 +144,18 @@ export default function Contato() {
             </motion.div>
 
             <motion.div custom={1} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
+              <Field label="Telefone">
+                <input
+                  name="telefone"
+                  value={form.telefone}
+                  onChange={update("telefone")}
+                  className={inputCls}
+                  placeholder="(88) 9 0000-0000"
+                />
+              </Field>
+            </motion.div>
+
+            <motion.div custom={2} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:col-span-2">
               <Field label="E-mail" required>
                 <input
                   required
@@ -170,38 +169,7 @@ export default function Contato() {
               </Field>
             </motion.div>
 
-            <motion.div custom={2} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <Field label="Telefone">
-                <input
-                  name="telefone"
-                  value={form.telefone}
-                  onChange={update("telefone")}
-                  className={inputCls}
-                  placeholder="(88) 9 0000-0000"
-                />
-              </Field>
-            </motion.div>
-
-            <motion.div custom={3} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
-              <Field label="Grau atual">
-                <select name="grau" value={form.grau} onChange={update("grau")} className={inputCls}>
-                  <option value="">— Selecione —</option>
-                  <option>Profano (interessado)</option>
-                  <option>Aprendiz</option>
-                  <option>Companheiro</option>
-                  <option>Mestre Maçom</option>
-                  <option>Mestre da Marca</option>
-                  <option>Nauta da Arca Real</option>
-                  <option>Mestre Excelentíssimo</option>
-                  <option>Sagrado Arco Real</option>
-                  <option>Cavaleiro de Malta</option>
-                  <option>Cavaleiro Templário</option>
-                  <option>Sacerdote Cavaleiro Templário (KTP)</option>
-                </select>
-              </Field>
-            </motion.div>
-
-            <motion.div custom={4} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:col-span-2">
+            <motion.div custom={3} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:col-span-2">
               <Field label="Ordem de interesse" full>
                 <select name="ordem" value={form.ordem} onChange={update("ordem")} className={inputCls}>
                   <option value="">— Selecione —</option>
@@ -216,7 +184,7 @@ export default function Contato() {
               </Field>
             </motion.div>
 
-            <motion.div custom={5} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:col-span-2">
+            <motion.div custom={4} variants={fieldVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:col-span-2">
               <Field label="Mensagem" full>
                 <textarea
                   name="mensagem"
@@ -232,7 +200,7 @@ export default function Contato() {
             {/* Botão de envio */}
             <motion.div
               className="md:col-span-2 flex flex-col items-center gap-4 pt-4"
-              custom={6}
+              custom={5}
               variants={fieldVariant}
               initial="hidden"
               whileInView="show"
@@ -256,12 +224,12 @@ export default function Contato() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  ✦ Sua missiva foi recebida. Em breve responderemos. ✦
+                  ✦ Sua mensagem foi recebida. Em breve responderemos. ✦
                 </motion.p>
               )}
 
               <p className="font-display text-[9px] tracking-[0.4em] uppercase text-amber-50/40">
-                Sigilo absoluto · Resposta em até 7 dias
+                Resposta em até 7 dias
               </p>
             </motion.div>
           </form>

@@ -6,7 +6,7 @@ const ORGANIZACOES = [
     id: "marca",
     emblema: "assets/lojas/Emblema_loja_marca.svg",
     nome: "Loja de Mestres Maçons da Marca Jacques de Molay n.º 66",
-    tipo: "Grau Capitular · Rito de York",
+    tipo: "Ordem dos Mestres Maçons da Marca",
     num: "I",
     cor: { glow: "rgba(30,64,175,0.4)", ring: "#3B82F6", text: "#93C5FD", accent: "#1E3A8A" },
   },
@@ -14,7 +14,7 @@ const ORGANIZACOES = [
     id: "nautas",
     emblema: "assets/lojas/Emblema_loja_nautas.svg",
     nome: "Loja de Nautas da Arca Real Jacques de Molay n.º 66",
-    tipo: "Ordem Anexa · Rito de York",
+    tipo: "Ordem dos Nautas da Arca Real",
     num: "II",
     cor: { glow: "rgba(21,128,61,0.4)", ring: "#22C55E", text: "#86EFAC", accent: "#14532D" },
   },
@@ -22,7 +22,7 @@ const ORGANIZACOES = [
     id: "sar",
     emblema: "assets/lojas/Emblema_loja_sar.svg",
     nome: "Capítulo Jacques de Molay n.º 140 do Sagrado Arco Real de Jerusalém",
-    tipo: "Grau Capitular · Coroamento da Mestria",
+    tipo: "Ordem do Sagrado Arco Real de Jerusalém",
     num: "III",
     cor: { glow: "rgba(153,27,27,0.45)", ring: "#EF4444", text: "#FCA5A5", accent: "#7F1D1D" },
   },
@@ -30,7 +30,7 @@ const ORGANIZACOES = [
     id: "malta",
     emblema: "assets/lojas/Emblema_loja_malta.svg",
     nome: "Priorado Jacques de Molay n.º 96 de Cavaleiros de Malta",
-    tipo: "Ordem Cavaleiresca · Rito de York",
+    tipo: "Ordem dos Cavaleiros de Malta",
     num: "IV",
     cor: { glow: "rgba(148,163,184,0.28)", ring: "#94A3B8", text: "#E2E8F0", accent: "#475569" },
   },
@@ -38,15 +38,15 @@ const ORGANIZACOES = [
     id: "templarios",
     emblema: "assets/lojas/Emblema_loja_templarios.svg",
     nome: "Preceptório Jacques de Molay n.º 96 de Cavaleiros Templários",
-    tipo: "Ordem Cavaleiresca · Cume do Rito de York",
+    tipo: "Ordem dos Cavaleiros Templários",
     num: "V",
     cor: { glow: "rgba(220,38,38,0.45)", ring: "#F87171", text: "#FCA5A5", accent: "#991B1B" },
   },
   {
     id: "ktp",
     emblema: "assets/lojas/Emblema_loja_ktp.svg",
-    nome: "Sacerdotes Cavaleiros Templários",
-    tipo: "Ordem Sacerdotal · Cume do Rito de York",
+    nome: "Tabernáculo Terra da Luz n.º 336",
+    tipo: "Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real",
     num: "VI",
     cor: { glow: "rgba(180,83,9,0.45)", ring: "#F59E0B", text: "#FCD34D", accent: "#78350F" },
   },
@@ -74,7 +74,7 @@ export default function NossasOrganizacoes() {
       {/* Textura */}
       <img src="assets/fundo_vermelho.svg" aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.18 }} />
+        style={{ opacity: 0.30 }} />
 
       {/* Marca d'água central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
@@ -85,11 +85,11 @@ export default function NossasOrganizacoes() {
 
       {/* Gradiente radial topo */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(122,18,22,0.45) 0%, transparent 60%)" }} />
+        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(155,22,28,0.58) 0%, transparent 60%)" }} />
 
       {/* Gradiente radial base */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(122,18,22,0.3) 0%, transparent 55%)" }} />
+        style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(155,22,28,0.45) 0%, transparent 55%)" }} />
 
       {/* Linha decorativa topo */}
       <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
@@ -112,13 +112,12 @@ export default function NossasOrganizacoes() {
           <SectionLabel>Nossas Organizações</SectionLabel>
 
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 mb-6 leading-tight">
-            Seis Selos,<br />Uma Tradição
+            Corpos em<br />funcionamento
           </h2>
 
           <p className="font-serif text-lg md:text-xl text-amber-50/70 italic max-w-2xl mx-auto leading-relaxed">
-            Cada organização porta seu emblema — insígnia de um percurso
-            iniciático que se ergue do Capítulo ao Grande Conclave,
-            radicado no solo sagrado do Cariri.
+            Conheça as organizações das Ordens de Aperfeiçoamento
+            Maçônico <br />que funcionam em nossa região.
           </p>
 
           <OrnamentalDivider className="mt-10 max-w-xs mx-auto" />
@@ -234,7 +233,7 @@ export default function NossasOrganizacoes() {
         >
           <OrnamentalDivider className="max-w-xs mx-auto mb-5" />
           <p className="font-display text-[9px] tracking-[0.5em] uppercase text-ouro-400/45">
-            Rito de York · Cariri · Ceará · Anno Lucis MMXXVI
+            Ordens de Aperfeiçoamento Maçônico no Cariri
           </p>
         </motion.div>
 

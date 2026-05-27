@@ -11,38 +11,38 @@ const cardVariant = {
 
 const MEMBROS = [
   {
-    cargo: "Ilustríssimo Governador",
-    nome: "N∴ Fulano de Tal",
+    cargo: "Eminente Preceptor",
+    nome: "Felipe Bandeira",
     emblema: "assets/lojas/Emblema_loja_templarios.svg",
     cor: { border: "#DC2626", glow: "rgba(220,38,38,0.3)", bg: "rgba(220,38,38,0.08)" },
   },
   {
-    cargo: "Venerável Mestre",
-    nome: "N∴ Cicrano de Sousa",
+    cargo: "Excelente Companheiro",
+    nome: "Wandson Pereira",
     emblema: "assets/lojas/Emblema_loja_sar.svg",
     cor: { border: "#991B1B", glow: "rgba(153,27,27,0.3)", bg: "rgba(153,27,27,0.08)" },
   },
   {
-    cargo: "Primeiro Vigilante",
-    nome: "N∴ Beltrano Araújo",
+    cargo: "Venerável Mestre",
+    nome: "Felipe Bandeira",
     emblema: "assets/lojas/Emblema_loja_marca.svg",
     cor: { border: "#1E40AF", glow: "rgba(30,64,175,0.3)", bg: "rgba(30,64,175,0.08)" },
   },
   {
-    cargo: "Secretário",
-    nome: "N∴ João das Pedras",
+    cargo: "Venerável Comandante",
+    nome: "Felipe Bandeira",
     emblema: "assets/lojas/Emblema_loja_nautas.svg",
     cor: { border: "#15803D", glow: "rgba(21,128,61,0.3)", bg: "rgba(21,128,61,0.08)" },
   },
   {
-    cargo: "Tesoureiro",
-    nome: "N∴ Pedro da Luz",
+    cargo: "Eminente Prior",
+    nome: "Felipe Bandeira",
     emblema: "assets/lojas/Emblema_loja_malta.svg",
     cor: { border: "#9CA3AF", glow: "rgba(156,163,175,0.25)", bg: "rgba(156,163,175,0.06)" },
   },
   {
-    cargo: "Orador",
-    nome: "N∴ Marcos do Vale",
+    cargo: "Sumo Sacerdote",
+    nome: "Leonardo Monteiro",
     emblema: "assets/lojas/Emblema_loja_ktp.svg",
     cor: { border: "#92400E", glow: "rgba(146,64,14,0.3)", bg: "rgba(146,64,14,0.08)" },
   },
@@ -50,16 +50,16 @@ const MEMBROS = [
 
 export default function Lideranca() {
   return (
-    <section id="lideranca" className="relative py-16 sm:py-20 lg:py-36 bg-carmesim-950 overflow-hidden">
+    <section id="lideranca" className="relative py-16 sm:py-20 lg:py-36 bg-floresta-950 overflow-hidden">
 
       {/* Textura */}
-      <img src="assets/fundo_vermelho.svg" aria-hidden="true"
+      <img src="assets/fundo_verde.svg" aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.18 }} />
+        style={{ opacity: 0.30 }} />
 
       {/* Gradiente radial topo */}
-      <div className="absolute inset-0 opacity-35 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(122,18,22,0.55) 0%, transparent 55%)" }} />
+      <div className="absolute inset-0 opacity-45 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(18,85,35,0.60) 0%, transparent 55%)" }} />
 
       {/* Linha decorativa topo */}
       <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
@@ -77,12 +77,11 @@ export default function Lideranca() {
         >
           <SectionLabel>Liderança</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 mb-6 leading-tight">
-            Os obreiros
-            <br />que dirigem
+            Os Presidentes
+            <br />dos Corpos
           </h2>
           <p className="font-serif text-lg md:text-xl text-amber-50/65 italic max-w-2xl mx-auto leading-relaxed">
-            Guiados pela tradição, servem ao Rito com a discrição e dedicação
-            que o Templo exige de seus melhores construtores.
+            Período Administrativo de 2026
           </p>
         </motion.div>
 
@@ -131,7 +130,7 @@ export default function Lideranca() {
                 />
 
                 {/* Gradiente base */}
-                <div className="absolute inset-0 bg-gradient-to-t from-carmesim-950/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-floresta-950/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Anel interno ornamental */}
                 <div
@@ -171,7 +170,7 @@ export default function Lideranca() {
           transition={{ duration: 1.2, delay: 0.5 }}
         >
           <p className="font-display text-[9px] tracking-[0.5em] uppercase text-amber-50/25">
-            Ordens de Aperfeiçoamento do Cariri · In Nomine Dei
+            Ordens de Aperfeiçoamento Maçônico no Cariri
           </p>
         </motion.div>
       </div>

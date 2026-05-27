@@ -51,7 +51,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 85% 70% at 50% 28%, #6b1520 0%, #380b0f 38%, #1a0507 68%, #090101 100%)",
+            "radial-gradient(ellipse 85% 70% at 50% 28%, #8a1a27 0%, #4e1016 38%, #220608 68%, #0e0102 100%)",
         }}
       />
       {/* fundo_vermelho.svg — textura e formas decorativas carmesim */}
@@ -59,15 +59,15 @@ export default function Hero() {
         src="assets/fundo_vermelho.svg"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.22 }}
+        style={{ opacity: 0.34 }}
       />
       {/* Raios laterais de luz quente */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 55% 80% at 8% 50%, rgba(107,21,32,0.22) 0%, transparent 65%), " +
-            "radial-gradient(ellipse 55% 80% at 92% 50%, rgba(80,14,22,0.18) 0%, transparent 65%)",
+            "radial-gradient(ellipse 55% 80% at 8% 50%, rgba(140,26,40,0.32) 0%, transparent 105%), " +
+            "radial-gradient(ellipse 55% 80% at 92% 50%, rgba(110,18,28,0.28) 0%, transparent 65%)",
         }}
       />
       {/* Grain — textura de nobreza */}
@@ -136,7 +136,7 @@ export default function Hero() {
         <motion.div className="flex items-center gap-4 mb-9" variants={item}>
           <span className="h-px w-8 sm:w-14 bg-gradient-to-r from-transparent to-ouro-400/50" />
           <span className="font-display tracking-[0.5em] text-[9px] sm:text-[10px] uppercase text-ouro-300/75">
-            Anno Lucis · MMXXVI
+            2026
           </span>
           <span className="h-px w-8 sm:w-14 bg-gradient-to-l from-transparent to-ouro-400/50" />
         </motion.div>
@@ -170,7 +170,7 @@ export default function Hero() {
           style={{ filter: "drop-shadow(0 4px 40px rgba(230,191,82,0.16))" }}
           variants={item}
         >
-          Ordens de<br />Aperfeiçoamento<br />do Cariri
+          Ordens de<br />Aperfeiçoamento<br />no Cariri
         </motion.h1>
 
         {/* Classificação */}
@@ -178,7 +178,7 @@ export default function Hero() {
           className="font-display tracking-[0.42em] sm:tracking-[0.55em] uppercase text-[10px] sm:text-[11px] text-ouro-300/55 mb-9 sm:mb-10"
           variants={item}
         >
-          Rito de York · Vale do Cariri
+          Região do Cariri Cearense
         </motion.p>
 
         {/* Divisor ornamental */}

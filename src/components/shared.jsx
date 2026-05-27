@@ -48,7 +48,7 @@ export function OrnamentalDivider({ className = "", label = null }) {
 /* --- SectionLabel --- */
 export function SectionLabel({ children }) {
   return (
-    <div className="flex items-center justify-center gap-3 text-ouro-300 font-display tracking-[0.45em] text-xs uppercase">
+    <div className="flex items-center justify-center gap-3 text-gray-300 font-display tracking-[0.45em] text-xs uppercase">
       <span aria-hidden>✦</span>
       <span>{children}</span>
       <span aria-hidden>✦</span>

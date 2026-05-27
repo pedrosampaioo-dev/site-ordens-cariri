@@ -59,6 +59,27 @@ const REUNIOES_DATA = [
   },
 ];
 
+function Indicators({ total, current, go, slide }) {
+  return (
+    <div className="flex items-center justify-center gap-2 mt-6">
+      {Array.from({ length: total }).map((_, i) => (
+        <button
+          key={i}
+          onClick={() => go(i)}
+          aria-label={`Ir para sessão ${i + 1}`}
+          style={{
+            height: "4px",
+            width: i === current ? "28px" : "4px",
+            borderRadius: "2px",
+            backgroundColor: i === current ? slide.cor.border : "rgba(230,191,82,0.22)",
+            transition: "all 0.35s ease",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Reunioes() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -84,42 +105,159 @@ export default function Reunioes() {
   const slide = REUNIOES_DATA[current];
 
   return (
-    <section id="reunioes" className="relative py-16 sm:py-20 lg:py-36 bg-carmesim-950 overflow-hidden">
+    <section id="reunioes" className="relative py-16 sm:py-20 lg:py-36 bg-ardosia-950 overflow-hidden">
 
       {/* Textura */}
-      <img src="assets/fundo_vermelho.svg" aria-hidden="true"
+      <img src="assets/fundo_preto.svg" aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-        style={{ opacity: 0.20 }} />
+        style={{ opacity: 0.28 }} />
 
-      <div className="absolute inset-0 opacity-30 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 80% 50%, rgba(122,18,22,0.4) 0%, transparent 55%)" }} />
+      <div className="absolute inset-0 opacity-60 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at 80% 50%, rgba(10,10,12,0.85) 0%, transparent 55%)" }} />
 
       {/* Cabeçalho */}
       <motion.div
-        className="relative max-w-7xl mx-auto px-6 lg:px-10 mb-12"
+        className="relative max-w-7xl mx-auto px-6 lg:px-10 mb-10 sm:mb-12"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
       >
         <SectionLabel>Memórias do Templo</SectionLabel>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 leading-tight">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-300 mt-6 leading-tight">
           Sessões realizadas,
           <br />laços fortalecidos
         </h2>
       </motion.div>
 
-      {/* Carrossel */}
-      <div className="relative max-w-7xl mx-auto">
-        <div
-          className="overflow-hidden"
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
-        >
-          {/* Slide atual - usando key para forçar re-render com animação */}
+      {/* ── MOBILE: cartão vertical ─────────────────────────────── */}
+      <div
+        className="sm:hidden relative mx-4"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* Barra colorida topo */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current + '-bar-m'}
+            className="absolute top-0 left-0 right-0 h-0.5 z-10"
+            style={{ backgroundColor: slide.cor.border }}
+            initial={{ scaleX: 0, transformOrigin: 'left' }}
+            animate={{ scaleX: 1 }}
+            exit={{ scaleX: 0, opacity: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </AnimatePresence>
+
+        {/* Foto */}
+        <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current + '-foto-m'}
+              src={slide.foto}
+              alt={slide.titulo}
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              onError={e => { e.target.style.display = "none"; }}
+            />
+          </AnimatePresence>
+
+          {/* Emblema marca d'água */}
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current + '-wm-m'}
+              src={slide.emblema}
+              aria-hidden="true"
+              className="absolute inset-0 m-auto w-36 h-36 object-contain pointer-events-none"
+              style={{ opacity: 0.08, filter: "brightness(3) saturate(0)" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.08 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              onError={e => { e.target.style.display = "none"; }}
+            />
+          </AnimatePresence>
+
+          {/* Gradiente inferior */}
+          <div className="absolute inset-0 bg-gradient-to-t from-ardosia-950/85 via-ardosia-950/20 to-transparent pointer-events-none" />
+
+          {/* Contador */}
+          <div className="absolute top-3 right-4 font-display text-[9px] tracking-[0.4em] text-amber-50/50">
+            {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </div>
+
+          {/* Setas sobre a foto */}
+          <button
+            onClick={prev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center border border-ouro-500/35 bg-ardosia-950/75 text-ouro-300 backdrop-blur-sm font-display"
+            aria-label="Slide anterior"
+          >
+            ←
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center border border-ouro-500/35 bg-ardosia-950/75 text-ouro-300 backdrop-blur-sm font-display"
+            aria-label="Próximo slide"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Bloco de conteúdo */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current + '-content-m'}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-start gap-4 px-5 py-5"
+            style={{
+              background: "rgba(11,11,12,0.96)",
+              borderLeft: `2px solid ${slide.cor.border}60`,
+            }}
+          >
+            {/* Emblema */}
+            <img
+              src={slide.emblema}
+              alt={slide.nomeOrdem}
+              className="w-12 h-12 shrink-0 object-contain mt-0.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+              onError={e => { e.target.style.display = "none"; }}
+            />
+
+            <div className="min-w-0 flex-1">
+              <span
+                className="font-display text-[9px] tracking-[0.4em] uppercase block mb-2"
+                style={{ color: slide.cor.text, opacity: 0.85 }}
+              >
+                {slide.nomeOrdem}
+              </span>
+              <h3 className="font-display text-[15px] leading-snug text-amber-50/95 mb-2.5">
+                {slide.titulo}
+              </h3>
+              <p className="font-body text-sm text-amber-50/45">
+                {slide.local} · {slide.data}
+              </p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <Indicators total={total} current={current} go={go} slide={slide} />
+      </div>
+
+      {/* ── DESKTOP: slide panorâmico ───────────────────────────── */}
+      <div
+        className="hidden sm:block relative max-w-7xl mx-auto"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        <div className="overflow-hidden">
           <div className="relative w-full" style={{ aspectRatio: "16 / 7" }}>
 
-            {/* Background com gradiente dinâmico */}
+            {/* Background dinâmico */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={current + '-bg'}
@@ -128,9 +266,7 @@ export default function Reunioes() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.6 }}
-                style={{
-                  background: `linear-gradient(135deg, ${slide.cor.border}22 0%, rgba(10,2,2,0.98) 100%)`,
-                }}
+                style={{ background: `linear-gradient(135deg, ${slide.cor.border}22 0%, rgba(7,7,8,0.98) 100%)` }}
               />
             </AnimatePresence>
 
@@ -169,17 +305,17 @@ export default function Reunioes() {
             </AnimatePresence>
 
             {/* Gradientes de sobreposição */}
-            <div className="absolute inset-0 bg-gradient-to-t from-carmesim-950 via-carmesim-950/30 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-carmesim-950/65 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ardosia-950 via-ardosia-950/45 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ardosia-950/80 via-ardosia-950/25 to-transparent pointer-events-none" />
 
             {/* Conteúdo do slide */}
-            <div className="absolute bottom-0 left-0 right-0 px-6 sm:px-10 pb-8 sm:pb-10 flex items-end gap-5">
+            <div className="absolute bottom-0 left-0 right-0 px-10 pb-10 flex items-end gap-6">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={current + '-emblema'}
                   src={slide.emblema}
                   alt={slide.nomeOrdem}
-                  className="w-14 h-14 sm:w-20 sm:h-20 shrink-0 object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
+                  className="w-20 h-20 shrink-0 object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -8 }}
@@ -198,14 +334,15 @@ export default function Reunioes() {
                 >
                   <span
                     className="font-display text-[9px] tracking-[0.45em] uppercase block mb-2"
-                    style={{ color: slide.cor.text, opacity: 0.75 }}
+                    style={{ color: slide.cor.text, opacity: 0.8 }}
                   >
                     {slide.nomeOrdem}
                   </span>
-                  <h3 className="font-display text-lg sm:text-2xl md:text-3xl text-amber-50/95 leading-tight mb-2">
+                  <h3 className="font-display text-2xl md:text-3xl text-amber-50/95 leading-tight mb-2.5"
+                    style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
                     {slide.titulo}
                   </h3>
-                  <p className="font-body text-sm sm:text-base text-amber-50/55">
+                  <p className="font-body text-base text-amber-50/60">
                     {slide.local} · {slide.data}
                   </p>
                 </motion.div>
@@ -213,11 +350,11 @@ export default function Reunioes() {
             </div>
 
             {/* Contador */}
-            <div className="absolute top-5 right-5 sm:top-8 sm:right-8 font-display text-[10px] tracking-[0.4em] text-amber-50/40">
+            <div className="absolute top-8 right-8 font-display text-[10px] tracking-[0.4em] text-amber-50/40">
               {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
             </div>
 
-            {/* Barra colorida da ordem — topo */}
+            {/* Barra colorida topo */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={current + '-bar'}
@@ -232,41 +369,25 @@ export default function Reunioes() {
           </div>
         </div>
 
-        {/* Controles de navegação */}
+        {/* Setas — desktop */}
         <button
           onClick={prev}
-          className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center border border-ouro-500/40 bg-carmesim-950/85 hover:bg-carmesim-900 hover:border-ouro-400 text-ouro-300 hover:text-ouro-400 transition-all backdrop-blur-sm font-display text-lg"
+          className="absolute left-5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center border border-ouro-500/40 bg-ardosia-950/85 hover:bg-ardosia-900 hover:border-ouro-400 text-ouro-300 hover:text-ouro-400 transition-all backdrop-blur-sm font-display text-lg"
           aria-label="Slide anterior"
         >
           ←
         </button>
-
         <button
           onClick={next}
-          className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center border border-ouro-500/40 bg-carmesim-950/85 hover:bg-carmesim-900 hover:border-ouro-400 text-ouro-300 hover:text-ouro-400 transition-all backdrop-blur-sm font-display text-lg"
+          className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center border border-ouro-500/40 bg-ardosia-950/85 hover:bg-ardosia-900 hover:border-ouro-400 text-ouro-300 hover:text-ouro-400 transition-all backdrop-blur-sm font-display text-lg"
           aria-label="Próximo slide"
         >
           →
         </button>
 
-        {/* Indicadores */}
-        <div className="flex items-center justify-center gap-2 mt-7">
-          {REUNIOES_DATA.map((r, i) => (
-            <button
-              key={i}
-              onClick={() => go(i)}
-              aria-label={`Ir para sessão ${i + 1}`}
-              style={{
-                height: "5px",
-                width: i === current ? "32px" : "5px",
-                borderRadius: "3px",
-                backgroundColor: i === current ? REUNIOES_DATA[current].cor.border : "rgba(230,191,82,0.25)",
-                transition: "all 0.4s ease",
-              }}
-            />
-          ))}
-        </div>
+        <Indicators total={total} current={current} go={go} slide={slide} />
       </div>
+
     </section>
   );
 }
