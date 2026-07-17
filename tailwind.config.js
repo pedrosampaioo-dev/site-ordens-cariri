@@ -36,6 +36,13 @@ export default {
           500: '#c9a23a',
           600: '#a07d24',
         },
+        prata: {
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+        },
       },
       animation: {
         'spin-slow':    'spin 30s linear infinite',

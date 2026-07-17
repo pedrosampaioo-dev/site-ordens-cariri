@@ -4,10 +4,11 @@ import OrderPage from './OrderPage';
 const DATA_NAUTAS = {
   id: "nautas",
   numero: "II",
+  theme: "verde",
   titulo: "Ordem dos Nautas da Arca Real",
   subtitulo: "Os Marinheiros da Arca Real — guardiões da aliança",
   classificacao: "Ordem Anexa · Rito de York",
-  emblema: "assets/insignias_ordens/Ordem_nauta.png",
+  emblema: "assets/insignias_ordens/Ordem_nauta.svg",
   queE: {
     titulo: "A Arca, o Dilúvio e a aliança renovada",
     paragrafos: [
@@ -39,14 +40,6 @@ const DATA_NAUTAS = {
         "Sete cores num arco — pacto entre o Criador e a criatura. Símbolo de que, após toda travessia, há um céu que se reconcilia.",
     },
   ],
-  requisitos: [
-    "Ser Mestre Maçom da Marca em situação regular.",
-    "Demonstrar leitura e meditação dos textos sagrados que tratam do dilúvio.",
-    "Estar em comunhão fraterna com os irmãos da Loja de Marca.",
-    "Aceitar o caráter eminentemente cristão da Ordem dos Nautas.",
-    "Manter conduta sóbria e exemplar dentro e fora do Templo.",
-    "Comprometer-se com a periodicidade dos trabalhos anuais.",
-  ],
   historia: [
     {
       titulo: "Origens britânicas",
@@ -70,6 +63,37 @@ const DATA_NAUTAS = {
         "Em terra de romaria, onde a fé atravessa gerações e a chuva é prece, a alegoria da Arca encontra ressonância especialmente forte — basta lembrar que toda festa nordestina é, em algum nível, gratidão por uma travessia.",
     },
   ],
+  galeria: {
+    rotulo: "Memória Visual",
+    titulo: "Os Nautas em imagens",
+    intro:
+      "Travessias, paramentos, vestígios históricos e curiosidades da Arca Real — o acervo vivo da Ordem no Vale do Cariri.",
+    itens: [
+      {
+        categoria: "Reuniões",
+        src: "assets/fotos/reuniao_nauta.jpeg",
+        alt: "Sessão da Ordem dos Nautas da Arca Real no Cariri",
+        legenda: "Sessão dos Nautas da Arca Real — Vale do Cariri.",
+      },
+      {
+        categoria: "Adornos & Paramentos",
+        src: "assets/molduras/Moldura_felipe_marcanauta.webp",
+        alt: "Paramento da Ordem dos Nautas",
+        fit: "contain",
+        legenda: "Joia e paramento do Nauta da Arca Real.",
+      },
+      {
+        categoria: "Fatos Históricos",
+        legenda:
+          "Reservado a registros da Arca, do dilúvio e da aliança do arco-íris.",
+      },
+      {
+        categoria: "Curiosidades",
+        legenda: "Reservado a estandartes, pombas e símbolos da travessia.",
+      },
+    ],
+    nota: "Os quadros reservados aguardam o acervo fotográfico da Ordem.",
+  },
 };
 
 export default function PageNautas({ setCurrentPage }) {

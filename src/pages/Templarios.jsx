@@ -4,10 +4,12 @@ import OrderPage from './OrderPage';
 const DATA_TEMPLARIOS = {
   id: "templarios",
   numero: "V",
+  theme: "vermelho",
+  ink: "prata",
   titulo: "Ordem dos Cavaleiros Templários",
   subtitulo: "Herdeiros simbólicos do Templo de Salomão",
   classificacao: "Ordem Cavaleiresca · Coroação do Rito de York",
-  emblema: "assets/insignias_ordens/Ordem_templarios.png",
+  emblema: "assets/insignias_ordens/Ordem_templarios.svg",
   queE: {
     titulo: "Do Templo histórico ao Templo do coração",
     paragrafos: [
@@ -39,14 +41,6 @@ const DATA_TEMPLARIOS = {
         "Fé, abnegação e defesa da cristandade. Votos simbólicos que ensinam ao homem moderno a recolher-se, simplificar e proteger o que importa.",
     },
   ],
-  requisitos: [
-    "Ser Maçom regular e professar a fé cristã em qualquer de suas tradições.",
-    "Ter recebido os graus do Sagrado Arco Real.",
-    "Apresentar carta de recomendação de Capítulo regular.",
-    "Manter conduta condizente com os ideais cavaleirescos.",
-    "Comprometer-se com a vigília espiritual e o estudo dos Evangelhos.",
-    "Aceitar os votos simbólicos com plena consciência de seu alcance.",
-  ],
   historia: [
     {
       titulo: "1307 — A Sexta-feira treze",
@@ -70,6 +64,37 @@ const DATA_TEMPLARIOS = {
         "A Ordem de Cristo, sucedânea portuguesa dos Templários, foi instrumental na chegada das caravelas ao Brasil. A cruz pátea ornava as velas. No Cariri, a memória cavaleiresca encontra eco nos romeiros que cruzam o sertão como peregrinos rumo a Juazeiro.",
     },
   ],
+  galeria: {
+    rotulo: "Memória Visual",
+    titulo: "Os Templários em imagens",
+    intro:
+      "Vigílias, paramentos, vestígios históricos e curiosidades da Ordem do Templo — o acervo vivo dos Cavaleiros Templários no Cariri.",
+    itens: [
+      {
+        categoria: "Reuniões",
+        src: "assets/fotos/reuniao_templario.jpeg",
+        alt: "Sessão da Comanderia dos Cavaleiros Templários no Cariri",
+        legenda: "Sessão da Comanderia Templária — Vale do Cariri.",
+      },
+      {
+        categoria: "Adornos & Paramentos",
+        src: "assets/molduras/Moldura_felipe_templario.webp",
+        alt: "Paramento da Ordem dos Cavaleiros Templários",
+        fit: "contain",
+        legenda: "Manto branco, cruz pátea e espada do Cavaleiro Templário.",
+      },
+      {
+        categoria: "Fatos Históricos",
+        legenda:
+          "Reservado a registros de Hugo de Payens, Molay e da Ordem de Cristo.",
+      },
+      {
+        categoria: "Curiosidades",
+        legenda: "Reservado a estandartes, selos e a cruz pátea sobre as velas.",
+      },
+    ],
+    nota: "Os quadros reservados aguardam o acervo fotográfico da Ordem.",
+  },
 };
 
 export default function PageTemplarios({ setCurrentPage }) {

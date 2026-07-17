@@ -4,10 +4,11 @@ import OrderPage from './OrderPage';
 const DATA_KTP = {
   id: "ktp",
   numero: "VI",
+  theme: "vermelho",
   titulo: "Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real",
   subtitulo: "O sacerdote e o cavaleiro — a síntese do Rito",
   classificacao: "Ordem Sacerdotal · Cume do Rito de York",
-  emblema: "assets/insignias_ordens/Ordem_ktp.png",
+  emblema: "assets/insignias_ordens/Ordem_ktp.svg",
   queE: {
     titulo: "Onde o Templo e o Arco se fundem no sacerdote-cavaleiro",
     paragrafos: [
@@ -39,14 +40,6 @@ const DATA_KTP = {
         "A espada do sacerdote-cavaleiro aponta sempre para baixo: não é instrumento de conquista, mas de proteção. Seu fio guarda o Templo de tudo que seria profanação.",
     },
   ],
-  requisitos: [
-    "Ter recebido todos os graus do Rito de York, incluindo o Sagrado Arco Real e a Ordem Templária.",
-    "Ser Cavaleiro de Malta em situação regular.",
-    "Demonstrar maturidade simbólica comprovada por anos de assiduidade e silêncio.",
-    "Ser proposto por irmãos KTP que atestem pessoalmente sua vocação.",
-    "Aceitar que o grau não é uma conquista, mas uma missão permanente.",
-    "Comprometer-se a permanecer como elo vivo da Cadeia da Tradição no Cariri.",
-  ],
   historia: [
     {
       titulo: "A confluência de duas correntes",
@@ -70,6 +63,32 @@ const DATA_KTP = {
         "Não porque seja o mais alto em hierarquia formal, mas porque pressupõe todos os outros. O irmão que chega à KTP carrega, em sua memória simbólica, cada pedra de cada grau anterior. Ele não é chamado ao pódio — é chamado ao serviço eterno da Tradição.",
     },
   ],
+  galeria: {
+    rotulo: "Memória Visual",
+    titulo: "A KTP em imagens",
+    intro:
+      "Consagrações, paramentos, vestígios históricos e curiosidades do último pórtico — um acervo a ser preenchido com a memória da Ordem no Cariri.",
+    itens: [
+      {
+        categoria: "Reuniões",
+        legenda: "Reservado a registros das sessões e consagrações da Ordem.",
+      },
+      {
+        categoria: "Adornos & Paramentos",
+        legenda: "Reservado à mitra, à espada dobrada e às insígnias sacerdotais.",
+      },
+      {
+        categoria: "Fatos Históricos",
+        legenda:
+          "Reservado a registros da confluência sacerdotal e cavaleiresca do Rito.",
+      },
+      {
+        categoria: "Curiosidades",
+        legenda: "Reservado a selos, gravuras e símbolos do sacerdote-cavaleiro.",
+      },
+    ],
+    nota: "Os quadros reservados aguardam o acervo fotográfico da Ordem.",
+  },
 };
 
 export default function PageKTP({ setCurrentPage }) {

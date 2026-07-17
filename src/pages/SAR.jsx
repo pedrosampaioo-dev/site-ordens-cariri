@@ -4,10 +4,11 @@ import OrderPage from './OrderPage';
 const DATA_SAR = {
   id: "sar",
   numero: "III",
+  theme: "vermelho",
   titulo: "Ordem do Sagrado Arco Real de Jerusalém",
   subtitulo: "Onde a Palavra Perdida é restaurada",
   classificacao: "Grau Capitular · Culminância do Rito de York",
-  emblema: "assets/insignias_ordens/Ordem_sar.png",
+  emblema: "assets/insignias_ordens/Ordem_sar.svg",
   queE: {
     titulo: "O grau que completa o Mestre",
     paragrafos: [
@@ -39,14 +40,6 @@ const DATA_SAR = {
         "Joia distintiva do Companheiro do Arco Real — três taus entrelaçados que significam 'Tesouro do Templo de Jerusalém' e a marca dos verdadeiramente iniciados.",
     },
   ],
-  requisitos: [
-    "Ser Mestre Maçom regular, há ao menos um ano.",
-    "Estar familiarizado com a alegoria do Templo e suas dimensões simbólicas.",
-    "Apresentar carta de Loja-mãe atestando regularidade.",
-    "Ter recebido os ensinamentos preliminares do grau de Mestre.",
-    "Aceitar o caráter judaico-cristão do simbolismo do Arco Real.",
-    "Comprometer-se a participar com assiduidade dos trabalhos do Capítulo.",
-  ],
   historia: [
     {
       titulo: "Da Inglaterra para o mundo",
@@ -70,6 +63,34 @@ const DATA_SAR = {
         "O símbolo, presente também na iconografia hospitalária medieval, foi adotado pelo Arco Real como sua joia distintiva. Pode ser interpretado simultaneamente como T+H (Templum Hierosolyma), três Ts entrelaçados ou a cruz copta — três caminhos, uma só verdade.",
     },
   ],
+  galeria: {
+    rotulo: "Memória Visual",
+    titulo: "O Arco Real em imagens",
+    intro:
+      "Sessões do Capítulo, paramentos, vestígios históricos e curiosidades do grau — o acervo vivo do Sagrado Arco Real no Cariri.",
+    itens: [
+      {
+        categoria: "Reuniões",
+        src: "assets/fotos/reuniao_sar.jpeg",
+        alt: "Sessão do Capítulo do Sagrado Arco Real no Cariri",
+        legenda: "Sessão do Capítulo do Sagrado Arco Real — Vale do Cariri.",
+      },
+      {
+        categoria: "Adornos & Paramentos",
+        legenda: "Reservado ao Triplo Tau, ao avental e às joias do Companheiro.",
+      },
+      {
+        categoria: "Fatos Históricos",
+        legenda:
+          "Reservado a registros da abóbada, da Palavra restaurada e do Templo.",
+      },
+      {
+        categoria: "Curiosidades",
+        legenda: "Reservado a gravuras, sinetes e símbolos do Arco Real.",
+      },
+    ],
+    nota: "Os quadros reservados aguardam o acervo fotográfico da Ordem.",
+  },
 };
 
 export default function PageSAR({ setCurrentPage }) {

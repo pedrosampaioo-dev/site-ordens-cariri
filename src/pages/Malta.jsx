@@ -4,10 +4,12 @@ import OrderPage from './OrderPage';
 const DATA_MALTA = {
   id: "malta",
   numero: "IV",
+  theme: "preto",
+  ink: "prata",
   titulo: "Ordem dos Cavaleiros de Malta",
   subtitulo: "Guardiões da fé e servos dos pobres",
   classificacao: "Ordem Cavaleiresca · Rito de York",
-  emblema: "assets/insignias_ordens/Ordem_malta.png",
+  emblema: "assets/insignias_ordens/Ordem_malta.svg",
   queE: {
     titulo: "Do Hospital de Jerusalém ao cavaleiro do Rito",
     paragrafos: [
@@ -39,14 +41,6 @@ const DATA_MALTA = {
         "Expulsos de Jerusalém, de Rodes, de Malta — os Hospitalários nunca dissolveram a Ordem. Ensinamento ao obreiro: a Tradição verdadeira sobrevive a toda perseguição e a todo exílio.",
     },
   ],
-  requisitos: [
-    "Ser Cavaleiro Templário regular, em pleno gozo dos seus direitos.",
-    "Professar a fé cristã e demonstrar vida compatível com os ideais cavaleirescos.",
-    "Apresentar referências de um Comendador ou irmão do corpo.",
-    "Ter conhecimento do simbolismo do Sagrado Arco Real.",
-    "Comprometer-se com o espírito de serviço e hospitalidade.",
-    "Aceitar os compromissos rituais da Ordem com consciência e liberdade.",
-  ],
   historia: [
     {
       titulo: "1048 — O hospital dos peregrinos",
@@ -69,6 +63,34 @@ const DATA_MALTA = {
         "Recebida no contexto da Comanderia Templária, a Ordem de Malta oferece ao Cavaleiro Templário uma dimensão adicional de meditação — a da misericórdia ativa — que complementa a ascese e a fé já cultivadas nos graus anteriores.",
     },
   ],
+  galeria: {
+    rotulo: "Memória Visual",
+    titulo: "Os Cavaleiros de Malta em imagens",
+    intro:
+      "Sessões, paramentos, vestígios históricos e curiosidades da Ordem Hospitalária — o acervo vivo dos Cavaleiros de Malta no Cariri.",
+    itens: [
+      {
+        categoria: "Reuniões",
+        src: "assets/fotos/reuniao_malta.jpeg",
+        alt: "Sessão da Ordem dos Cavaleiros de Malta no Cariri",
+        legenda: "Sessão dos Cavaleiros de Malta — Vale do Cariri.",
+      },
+      {
+        categoria: "Adornos & Paramentos",
+        legenda: "Reservado à cruz de oito pontas, ao manto negro e às insígnias.",
+      },
+      {
+        categoria: "Fatos Históricos",
+        legenda:
+          "Reservado a registros do Hospital de Jerusalém, de Rodes e de Malta.",
+      },
+      {
+        categoria: "Curiosidades",
+        legenda: "Reservado à heráldica hospitalária e à sua eco no sertão.",
+      },
+    ],
+    nota: "Os quadros reservados aguardam o acervo fotográfico da Ordem.",
+  },
 };
 
 export default function PageMalta({ setCurrentPage }) {
