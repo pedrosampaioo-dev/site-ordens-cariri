@@ -17,6 +17,7 @@ export default function SobreOrdens() {
 
       {/* Textura */}
       <img src="assets/fundo_azul.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.30 }} />
 
@@ -35,8 +36,8 @@ export default function SobreOrdens() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         >
-          <SectionLabel>Nossa História</SectionLabel>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-300 mt-6 leading-tight">
+          <SectionLabel tone="prata" align="left">Nossa História</SectionLabel>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-prata-300 mt-6 leading-tight">
             De onde viemos,<br />por que existimos
           </h2>
         </motion.div>
@@ -51,10 +52,10 @@ export default function SobreOrdens() {
             transition={{ duration: 1.05, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Cantos ornamentais */}
-            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-gray-500/70 z-10 pointer-events-none" />
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-gray-500/70 z-10 pointer-events-none" />
-            <div className="absolute -top-4 -right-4 w-7 h-7 border-t border-r border-gray-400/30 z-10 pointer-events-none" />
-            <div className="absolute -bottom-4 -left-4 w-7 h-7 border-b border-l border-gray-400/30 z-10 pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-prata-500/70 z-10 pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-prata-500/70 z-10 pointer-events-none" />
+            <div className="absolute -top-4 -right-4 w-7 h-7 border-t border-r border-prata-400/30 z-10 pointer-events-none" />
+            <div className="absolute -bottom-4 -left-4 w-7 h-7 border-b border-l border-prata-400/30 z-10 pointer-events-none" />
 
             {/* Glow de moldura */}
             <div className="absolute inset-0 z-10 pointer-events-none"
@@ -62,8 +63,10 @@ export default function SobreOrdens() {
 
             <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4 / 5' }}>
               <motion.img
-                src="assets/foto_jd.png"
+                src="assets/foto_jd.jpg"
                 alt="História das Ordens de Aperfeiçoamento do Cariri"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
@@ -86,12 +89,13 @@ export default function SobreOrdens() {
             viewport={{ once: true, margin: '-60px' }}
           >
             <motion.p variants={fadeUp}
-              className="first-letter:font-display first-letter:text-6xl first-letter:font-bold first-letter:text-gray-400 first-letter:mr-3 first-letter:float-left first-letter:leading-none first-letter:mt--1">
-              A Criação das Ordens de Aperfeiçoamento Maçônico no Cariri
+              className="font-serif italic text-xl md:text-2xl text-amber-50/70 leading-snug">
+              A criação das Ordens de Aperfeiçoamento Maçônico no Cariri
             </motion.p>
 
-            <motion.p variants={fadeUp}>
-              As Ordens de Aperfeiçoamento no Cariri nasceram do entusiasmo, da dedicação e da visão fraterna de irmãos comprometidos com o crescimento da Maçonaria na região. Foi por iniciativa e incentivo dos irmãos que integram as lojas simbólicas na região do cariri cearense que se acendeu a chama que daria origem a este importante capítulo da história maçônica do Cariri.
+            <motion.p variants={fadeUp}
+              className="first-letter:font-display first-letter:text-6xl first-letter:font-bold first-letter:text-prata-300 first-letter:mr-3 first-letter:float-left first-letter:leading-none first-letter:mt-1">
+              As Ordens de Aperfeiçoamento no Cariri nasceram do entusiasmo, da dedicação e da visão fraterna de irmãos comprometidos com o crescimento da Maçonaria na região. Foi por iniciativa e incentivo dos irmãos que integram as Lojas simbólicas da região do Cariri cearense que se acendeu a chama que daria origem a este importante capítulo da história maçônica.
             </motion.p>
 
             <motion.p variants={fadeUp}>

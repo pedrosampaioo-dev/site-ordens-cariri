@@ -101,6 +101,7 @@ export default function Cronograma() {
 
       {/* Textura */}
       <img src="assets/fundo_vermelho.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.30 }} />
 
@@ -120,12 +121,12 @@ export default function Cronograma() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         >
-          <SectionLabel>Cronograma</SectionLabel>
+          <SectionLabel align="left">Cronograma</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 leading-tight">
             Próximas Reuniões
           </h2>
-          <p className="font-serif italic text-amber-50/55 text-lg mt-4 max-w-xl">
-            Fique atento as próximas atividades.
+          <p className="font-serif italic text-amber-50/65 text-lg mt-4 max-w-xl">
+            Fique atento às próximas atividades.
           </p>
         </motion.div>
 
@@ -244,6 +245,7 @@ export default function Cronograma() {
                       <img
                         src={c.emblema}
                         alt={c.nomeOrdem}
+                        loading="lazy" decoding="async"
                         className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 object-contain opacity-65 group-hover:opacity-100 transition-opacity duration-300"
                         onError={e => { e.target.style.display = "none"; }}
                       />

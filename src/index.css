@@ -35,6 +35,33 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Animações infinitas em CSS (compositor thread, sem JS) ── */
+@keyframes spin-cw {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-ccw {
+  to { transform: rotate(-360deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.72; }
+}
+@keyframes emblem-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 1; }
+}
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+.anim-spin-cw-130  { animation: spin-cw  130s linear infinite; will-change: transform; }
+.anim-spin-cw-90   { animation: spin-cw   90s linear infinite; will-change: transform; }
+.anim-spin-ccw-140 { animation: spin-ccw 140s linear infinite; will-change: transform; }
+.anim-glow-pulse   { animation: glow-pulse   4.5s ease-in-out infinite; will-change: opacity; }
+.anim-emblem-pulse { animation: emblem-pulse   5s ease-in-out infinite; will-change: opacity; }
+.anim-bounce-y     { animation: bounce-y      2.8s ease-in-out infinite; will-change: transform; }
+
 html { scroll-behavior: smooth; background: #1a0507; }
 body { background: #1a0507; }
 

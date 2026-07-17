@@ -73,12 +73,14 @@ export default function NossasOrganizacoes() {
 
       {/* Textura */}
       <img src="assets/fundo_vermelho.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.30 }} />
 
       {/* Marca d'água central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <img src="assets/lojas/Ordens_cariri.svg" aria-hidden="true"
+        <img src="assets/lojas/Ordens_cariri.png" aria-hidden="true"
+          loading="lazy" decoding="async"
           className="w-[700px] h-[700px] object-contain"
           style={{ opacity: 0.03, filter: "brightness(3) saturate(0)" }} />
       </div>
@@ -117,7 +119,7 @@ export default function NossasOrganizacoes() {
 
           <p className="font-serif text-lg md:text-xl text-amber-50/70 italic max-w-2xl mx-auto leading-relaxed">
             Conheça as organizações das Ordens de Aperfeiçoamento
-            Maçônico <br />que funcionam em nossa região.
+            Maçônico que funcionam em nossa região.
           </p>
 
           <OrnamentalDivider className="mt-10 max-w-xs mx-auto" />
@@ -178,11 +180,12 @@ export default function NossasOrganizacoes() {
                     style={{ inset: '-10px', borderColor: org.cor.ring + "30" }} />
 
                   {/* Glow pulsante por trás do emblema */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full pointer-events-none"
-                    style={{ background: `radial-gradient(ellipse at 50% 50%, ${org.cor.glow} 0%, transparent 70%)` }}
-                    animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.92, 1.08, 0.92] }}
-                    transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                  <div
+                    className="absolute inset-0 rounded-full pointer-events-none anim-glow-pulse"
+                    style={{
+                      background: `radial-gradient(ellipse at 50% 50%, ${org.cor.glow} 0%, transparent 70%)`,
+                      animationDelay: `${i * 0.5}s`,
+                    }}
                   />
 
                   {/* Emblema */}
@@ -190,6 +193,7 @@ export default function NossasOrganizacoes() {
                     <img
                       src={org.emblema}
                       alt={`Emblema — ${org.nome}`}
+                      loading="lazy" decoding="async"
                       className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                       style={{ filter: "drop-shadow(0 4px 28px rgba(0,0,0,0.75))" }}
                       onError={e => { e.target.style.display = "none"; }}

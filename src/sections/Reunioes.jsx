@@ -43,7 +43,7 @@ const REUNIOES_DATA = [
     nomeOrdem: "Sagrado Arco Real",
     cor: { border: "#991B1B", text: "#FCA5A5" },
     emblema: "assets/insignias_ordens/Ordem_sar.svg",
-    foto: "assets/fotos/reuniao_01.jpeg",
+    foto: "assets/fotos/reuniao_sar.jpeg",
     titulo: "Reunião do Capítulo do Sagrado Arco Real",
     local: "Juazeiro do Norte — CE",
     data: "20 Mai. 2026",
@@ -52,7 +52,8 @@ const REUNIOES_DATA = [
     nomeOrdem: "Sacerdotes Templários (KTP)",
     cor: { border: "#92400E", text: "#FCD34D" },
     emblema: "assets/insignias_ordens/Ordem_ktp.svg",
-    foto: "assets/fotos/reuniao_06.jpg",
+    foto: null, // sem registro fotográfico — o slide mostra o emblema sobre o fundo da Ordem
+
     titulo: "Encampamento dos Sacerdotes Cavaleiros Templários",
     local: "Crato — CE",
     data: "11 Dez. 2025",
@@ -109,6 +110,7 @@ export default function Reunioes() {
 
       {/* Textura */}
       <img src="assets/fundo_preto.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.28 }} />
 
@@ -123,8 +125,8 @@ export default function Reunioes() {
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
       >
-        <SectionLabel>Memórias do Templo</SectionLabel>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-300 mt-6 leading-tight">
+        <SectionLabel tone="prata" align="left">Memórias do Templo</SectionLabel>
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-prata-300 mt-6 leading-tight">
           Sessões realizadas,
           <br />laços fortalecidos
         </h2>
@@ -149,32 +151,42 @@ export default function Reunioes() {
           />
         </AnimatePresence>
 
-        {/* Foto */}
-        <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={current + '-foto-m'}
-              src={slide.foto}
-              alt={slide.titulo}
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: 0, scale: 1.04 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              onError={e => { e.target.style.display = "none"; }}
-            />
-          </AnimatePresence>
+        {/* Foto (ou fundo da Ordem, quando não há registro fotográfico) */}
+        <div
+          className="relative overflow-hidden"
+          style={{
+            aspectRatio: '4/3',
+            background: slide.foto
+              ? undefined
+              : `linear-gradient(150deg, ${slide.cor.border}26 0%, rgba(7,7,8,0.96) 100%)`,
+          }}
+        >
+          {slide.foto && (
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={current + '-foto-m'}
+                src={slide.foto}
+                alt={slide.titulo}
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </AnimatePresence>
+          )}
 
-          {/* Emblema marca d'água */}
+          {/* Emblema marca d'água — protagonista quando não há foto */}
           <AnimatePresence mode="wait">
             <motion.img
               key={current + '-wm-m'}
               src={slide.emblema}
               aria-hidden="true"
               className="absolute inset-0 m-auto w-36 h-36 object-contain pointer-events-none"
-              style={{ opacity: 0.08, filter: "brightness(3) saturate(0)" }}
+              style={{ filter: slide.foto ? "brightness(3) saturate(0)" : "none" }}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.08 }}
+              animate={{ opacity: slide.foto ? 0.08 : 0.55 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
               onError={e => { e.target.style.display = "none"; }}
@@ -270,7 +282,7 @@ export default function Reunioes() {
               />
             </AnimatePresence>
 
-            {/* Emblema central marca d'água */}
+            {/* Emblema central marca d'água — protagonista quando não há foto */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -279,9 +291,9 @@ export default function Reunioes() {
                   alt=""
                   aria-hidden="true"
                   className="w-72 h-72 object-contain"
-                  style={{ opacity: 0.06, filter: "brightness(3) saturate(0)" }}
+                  style={{ filter: slide.foto ? "brightness(3) saturate(0)" : "none" }}
                   initial={{ opacity: 0, scale: 1.3 }}
-                  animate={{ opacity: 0.06, scale: 1 }}
+                  animate={{ opacity: slide.foto ? 0.06 : 0.5, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.85 }}
                   transition={{ duration: 0.8 }}
                   onError={e => { e.target.style.display = "none"; }}
@@ -289,20 +301,22 @@ export default function Reunioes() {
               </AnimatePresence>
             </div>
 
-            {/* Foto */}
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={current + '-foto'}
-                src={slide.foto}
-                alt={slide.titulo}
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                onError={e => { e.target.style.display = "none"; }}
-              />
-            </AnimatePresence>
+            {/* Foto (omitida quando a Ordem ainda não tem registro fotográfico) */}
+            {slide.foto && (
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={current + '-foto'}
+                  src={slide.foto}
+                  alt={slide.titulo}
+                  decoding="async"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                />
+              </AnimatePresence>
+            )}
 
             {/* Gradientes de sobreposição */}
             <div className="absolute inset-0 bg-gradient-to-t from-ardosia-950 via-ardosia-950/45 to-transparent pointer-events-none" />

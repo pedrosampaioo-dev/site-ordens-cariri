@@ -123,11 +123,9 @@ export default function LocalCariri() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Anel externo girando lentamente */}
-          <motion.div
-            className="absolute rounded-full border border-ouro-500/20"
+          <div
+            className="absolute rounded-full border border-ouro-500/20 anim-spin-cw-90"
             style={{ inset: '-15%' }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 90, repeat: Infinity, ease: 'linear' }}
           >
             {/* Marcadores cardinais nos 4 pontos */}
             {[0, 90, 180, 270].map((deg) => (
@@ -141,14 +139,12 @@ export default function LocalCariri() {
                 }}
               />
             ))}
-          </motion.div>
+          </div>
 
           {/* Anel médio girando ao contrário */}
-          <motion.div
-            className="absolute rounded-full border border-ouro-500/12"
+          <div
+            className="absolute rounded-full border border-ouro-500/[0.12] anim-spin-ccw-140"
             style={{ inset: '-5%', borderStyle: 'dashed' }}
-            animate={{ rotate: -360 }}
-            transition={{ duration: 140, repeat: Infinity, ease: 'linear' }}
           />
 
           {/* Anel interno estático */}
@@ -159,11 +155,9 @@ export default function LocalCariri() {
           {/* Emblema central com glow pulsante */}
           <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] flex items-center justify-center">
             {/* Glow */}
-            <motion.div
-              className="absolute inset-0 rounded-full pointer-events-none"
+            <div
+              className="absolute inset-0 rounded-full pointer-events-none anim-emblem-pulse"
               style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(230,191,82,0.12) 0%, transparent 65%)' }}
-              animate={{ opacity: [0.4, 1, 0.4], scale: [0.95, 1.05, 0.95] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             />
 
             <Emblema size={220} ring={false} glow={true} />

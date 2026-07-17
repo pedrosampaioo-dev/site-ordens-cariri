@@ -58,6 +58,7 @@ export default function Hero() {
       <img
         src="assets/fundo_vermelho.svg"
         aria-hidden="true"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.34 }}
       />
@@ -80,14 +81,12 @@ export default function Hero() {
 
       {/* ── Ornamento geométrico girante ── */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <motion.svg
+        <svg
           viewBox="0 0 600 600"
-          className="w-[min(92vmin,700px)] h-[min(92vmin,700px)] opacity-[0.048]"
+          className="anim-spin-cw-130 w-[min(92vmin,700px)] h-[min(92vmin,700px)] opacity-[0.048]"
           fill="none"
           stroke="rgba(230,191,82,1)"
           strokeWidth="0.55"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 130, ease: "linear", repeat: Infinity }}
         >
           <circle cx="300" cy="300" r="278" />
           <circle cx="300" cy="300" r="238" strokeDasharray="2 16" />
@@ -118,7 +117,7 @@ export default function Hero() {
               />
             );
           })}
-        </motion.svg>
+        </svg>
       </div>
 
       {/* Fade para a próxima seção */}
@@ -155,11 +154,9 @@ export default function Hero() {
             style={{ inset: "-20px", borderStyle: "dashed" }}
           />
           {/* Pulso de luz */}
-          <motion.div
-            className="absolute inset-0 rounded-full"
+          <div
+            className="absolute inset-0 rounded-full anim-emblem-pulse"
             style={{ boxShadow: "0 0 90px 24px rgba(230,191,82,0.07)" }}
-            animate={{ opacity: [0.35, 1, 0.35], scale: [0.97, 1.03, 0.97] }}
-            transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
           />
           <Emblema size={170} ring={false} glow={true} />
         </motion.div>
@@ -170,40 +167,26 @@ export default function Hero() {
           style={{ filter: "drop-shadow(0 4px 40px rgba(230,191,82,0.16))" }}
           variants={item}
         >
-          Ordens de<br />Aperfeiçoamento<br />no Cariri
+          Ordens de<br />Aperfeiçoamento <br />Maçônico<br />no Cariri
         </motion.h1>
 
-        {/* Classificação */}
+        {/* Subheadline — proposta de valor */}
         <motion.p
-          className="font-display tracking-[0.42em] sm:tracking-[0.55em] uppercase text-[10px] sm:text-[11px] text-ouro-300/55 mb-9 sm:mb-10"
+          className="font-body text-base sm:text-[1.0625rem] text-amber-50/65 max-w-[34rem] leading-relaxed mb-10 sm:mb-12"
           variants={item}
         >
-          Região do Cariri Cearense
+          Seis Ordens de Aperfeiçoamento Maçônico do Rito de York, reunidas no Vale do Cariri — elevando Irmãos que buscam ir além do grau simbólico.
         </motion.p>
 
-        {/* Divisor ornamental */}
-        <motion.div className="w-full max-w-[260px] mb-9 sm:mb-10" variants={item}>
-          <OrnamentalDivider />
-        </motion.div>
-
-        {/* Citação */}
-        <motion.blockquote
-          className="font-serif italic text-lg md:text-xl text-amber-50/65 max-w-[38rem] leading-relaxed mb-12 sm:mb-16"
-          variants={item}
-        >
-          "Onde a pedra bruta encontra o cinzel, e o homem encontra a si mesmo —
-          sob a luz que vem do alto, no silêncio do templo."
-        </motion.blockquote>
-
-        {/* CTAs */}
+        {/* CTAs — acima do fold */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mb-16 sm:mb-20"
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mb-10 sm:mb-14"
           variants={item}
         >
           {/* CTA primário — ouro sólido com shimmer */}
           <a
-            href="#conhecer"
-            className="group relative inline-flex items-center gap-3 overflow-hidden px-9 py-[15px] font-display text-[10px] sm:text-[11px] tracking-[0.45em] uppercase text-carmesim-950 font-semibold transition-transform duration-200 hover:-translate-y-px active:translate-y-0 select-none"
+            href="#organizacoes"
+            className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 overflow-hidden px-9 py-[15px] font-display text-[10px] sm:text-[11px] tracking-[0.45em] uppercase text-carmesim-950 font-semibold transition-transform duration-200 hover:-translate-y-px active:translate-y-0 select-none"
             style={{
               background: "linear-gradient(150deg, #f5d77a 0%, #e6bf52 48%, #c9a23a 100%)",
               boxShadow:
@@ -224,19 +207,24 @@ export default function Hero() {
             </span>
           </a>
 
-          {/* CTA secundário — ghost com linha animada */}
+          {/* CTA secundário — Petição */}
           <a
-            href="#sobre"
+            href="#contato"
             className="group inline-flex items-center gap-3 font-display text-[10px] sm:text-[11px] tracking-[0.45em] uppercase text-amber-50/50 hover:text-ouro-300 transition-colors duration-300 select-none"
           >
             <span className="block h-px w-5 bg-current opacity-60 transition-all duration-300 group-hover:w-8 group-hover:opacity-100" />
-            O que somos
+            Iniciar Petição
           </a>
+        </motion.div>
+
+        {/* Divisor ornamental */}
+        <motion.div className="w-full max-w-[260px] mb-9 sm:mb-10" variants={item}>
+          <OrnamentalDivider />
         </motion.div>
 
         {/* Barra de estatísticas */}
         <motion.div
-          className="pt-9 border-t border-ouro-500/20 flex flex-wrap items-center justify-center gap-10 sm:gap-24 w-full"
+          className="flex flex-wrap items-center justify-center gap-10 sm:gap-24 w-full mb-10"
           variants={item}
         >
           <div className="text-center">
@@ -273,6 +261,15 @@ export default function Hero() {
             </p>
           </div>
         </motion.div>
+
+        {/* Citação — elemento atmosférico */}
+        <motion.blockquote
+          className="font-serif italic text-sm text-amber-50/38 max-w-[36rem] leading-relaxed border-t border-ouro-500/15 pt-8"
+          variants={item}
+        >
+          "Onde a pedra bruta encontra o cinzel, e o homem encontra a si mesmo —
+          sob a luz que vem do alto, no silêncio do templo."
+        </motion.blockquote>
       </motion.div>
 
       {/* ── Indicador de scroll ── */}
@@ -282,14 +279,10 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 2.4, duration: 1.2 }}
       >
-        <motion.div
-          className="flex flex-col items-center gap-2 text-ouro-300/40"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity }}
-        >
+        <div className="flex flex-col items-center gap-2 text-ouro-300/40 anim-bounce-y">
           <span className="font-display text-[8px] tracking-[0.65em] uppercase">Descer</span>
           <span className="w-px h-9 bg-gradient-to-b from-ouro-400/55 to-transparent" />
-        </motion.div>
+        </div>
       </motion.div>
 
     </section>

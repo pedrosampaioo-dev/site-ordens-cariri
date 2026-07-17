@@ -84,6 +84,7 @@ export default function ConhecerOrdens({ onSelect }) {
 
       {/* Textura */}
       <img src="assets/fundo_vermelho.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.30 }} />
 
@@ -107,12 +108,11 @@ export default function ConhecerOrdens({ onSelect }) {
         >
           <SectionLabel>As Ordens</SectionLabel>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ouro-300 mt-6 mb-6 sm:mb-8 leading-tight">
-            Seis caminhos,
-            
+            Seis caminhos,<br />uma só tradição
           </h2>
           <p className="font-serif text-lg md:text-xl text-amber-50/70 italic max-w-3xl mx-auto leading-relaxed">
-            Cada Ordem é um pórtico, Atravessá-lo é descobrir
-            uma nova jornada de conhecimentos
+            Cada Ordem é um pórtico. Atravessá-lo é descobrir
+            uma nova jornada de conhecimento.
           </p>
         </motion.div>
 
@@ -154,6 +154,7 @@ export default function ConhecerOrdens({ onSelect }) {
                   src={o.emblema}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy" decoding="async"
                   className="w-64 h-64 object-contain opacity-[0.09] group-hover:opacity-[0.18] transition-opacity duration-700"
                   style={{ filter: "brightness(3) saturate(0)" }}
                   onError={e => { e.target.style.display = "none"; }}
@@ -185,6 +186,7 @@ export default function ConhecerOrdens({ onSelect }) {
                   <img
                     src={o.emblema}
                     alt={`Emblema ${o.nomeAbreviado}`}
+                    loading="lazy" decoding="async"
                     className="w-24 h-24 object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]"
                     onError={e => { e.target.style.display = "none"; }}
                   />

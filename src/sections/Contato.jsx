@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Emblema, SectionLabel } from '../components/shared';
 
 const inputCls =
-  "w-full bg-carmesim-900/60 border border-ouro-500/25 focus:border-ouro-400 focus:bg-carmesim-900 text-amber-50 placeholder:text-amber-50/30 font-body text-base px-4 py-3 outline-none transition-colors focus:ring-1 focus:ring-ouro-400/40";
+  "w-full bg-carmesim-900/60 border border-ouro-500/25 focus:border-ouro-400 focus:bg-carmesim-900 text-amber-50 placeholder:text-amber-50/45 font-body text-base px-4 py-3 outline-none transition-colors focus:ring-1 focus:ring-ouro-400/40";
 
 function Field({ label, children, full = false, required = false }) {
   return (
@@ -116,7 +116,7 @@ export default function Contato() {
             <Emblema size={88} ring={false} glow={false} />
             <SectionLabel>Petição</SectionLabel>
             <h2 className="font-display text-3xl md:text-4xl text-ouro-300 mt-5 mb-4 leading-tight">
-              Entre em contato
+              Petição de Ingresso
             </h2>
 
             {/* Divisor ornamental */}
