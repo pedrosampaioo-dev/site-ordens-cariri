@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const EMBLEMA_SRC = "assets/lojas/Ordens_cariri.svg";
+export const EMBLEMA_SRC = "assets/lojas/Ordens_cariri.png";
 
 /* --- Emblema --- */
 export function Emblema({ size = 96, ring = true, glow = true, className = "" }) {
@@ -45,10 +45,15 @@ export function OrnamentalDivider({ className = "", label = null }) {
   );
 }
 
-/* --- SectionLabel --- */
-export function SectionLabel({ children }) {
+/* --- SectionLabel ---
+   Cor padrão: Ouro Velho (a assinatura que une todas as seções).
+   `tone="prata"` acompanha as seções de tinta prata (Nossa História, Reuniões).
+   `align="left"` segue cabeçalhos alinhados à esquerda. */
+export function SectionLabel({ children, tone = "ouro", align = "center" }) {
+  const color = tone === "prata" ? "text-prata-300/85" : "text-ouro-300/90";
+  const justify = align === "left" ? "justify-start" : "justify-center";
   return (
-    <div className="flex items-center justify-center gap-3 text-gray-300 font-display tracking-[0.45em] text-xs uppercase">
+    <div className={`flex items-center ${justify} gap-3 ${color} font-display tracking-[0.45em] text-xs uppercase`}>
       <span aria-hidden>✦</span>
       <span>{children}</span>
       <span aria-hidden>✦</span>
@@ -173,6 +178,7 @@ export function Footer() {
     <footer className="relative border-t border-ouro-500/15 bg-carmesim-950 overflow-hidden">
       {/* Textura de fundo */}
       <img src="assets/fundo_preto.svg" aria-hidden="true"
+        loading="lazy" decoding="async"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
         style={{ opacity: 0.35 }} />
 
