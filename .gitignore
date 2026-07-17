@@ -1,2 +1,5 @@
 .claude/
 node_modules/
+.agents/
+.impeccable/
+skills-lock.json
