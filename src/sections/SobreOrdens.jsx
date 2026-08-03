@@ -99,7 +99,7 @@ export default function SobreOrdens() {
             </motion.p>
 
             <motion.p variants={fadeUp}>
-              Movidos pelo desejo de aprofundar os ensinamentos maçônicos e fortalecer os laços fraternos, um pequeno grupo de irmãos da Loja Maçônica Jacques de Molay n.º 4810 empenharam-se na construção de uma estrutura que pudesse levar as Ordens de Aperfeiçoamento a um número cada vez maior de maçons na região do Cariri e adjacências.
+              Movidos pelo desejo de aprofundar os ensinamentos maçônicos e fortalecer os laços fraternos, o Grupo de irmãos da Loja Maçônica Jacques de Molay n.° 4810 com o apoio do Eminente Grão-Mestre Leonardo Monteiro do GOBCE, empenharam-se na construção de uma estrutura que pudesse levar as Ordens de Aperfeiçoamento a um número cada vez maior de maçons na região do Cariri e adjacências.
             </motion.p>
 
             <motion.p variants={fadeUp}>
