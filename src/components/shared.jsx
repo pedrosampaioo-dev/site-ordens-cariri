@@ -81,6 +81,7 @@ export function Navbar({ onHome, onContato, variant = "home" }) {
     { label: "Organizações",    href: "#organizacoes" },
     { label: "Liderança",      href: "#lideranca" },
     { label: "As Ordens",      href: "#conhecer" },
+    { label: "Cronograma",     href: "#cronograma" },
     { label: "Contato",        href: "#contato" },
   ] : [];
 
