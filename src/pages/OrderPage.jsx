@@ -623,6 +623,24 @@ export default function OrderPage({ data, setCurrentPage }) {
         </div>
       </section>
 
+      {/* Graus da Ordem */}
+      {data.graus && (
+        <section className={`relative py-16 sm:py-24 lg:py-32 ${theme.bg900} overflow-hidden`}>
+          <SectionTexture src={theme.texture} />
+          <div className="relative max-w-4xl mx-auto px-6 lg:px-10">
+            <SectionLabel>Graus</SectionLabel>
+            <h2 className={`font-display text-3xl md:text-5xl ${ink.head} mt-6 mb-10 text-center leading-tight`}>
+              {data.graus.titulo}
+            </h2>
+            <div className="space-y-6 font-body text-lg md:text-xl text-amber-50/80 leading-relaxed">
+              {data.graus.paragrafos.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* A Pedra histórica — destaque + explicação */}
       {data.pedra && (
         <PedraSection pedra={data.pedra} theme={theme} ink={ink} charme={data.charme} reduceMotion={reduceMotion} />

@@ -16,6 +16,12 @@ const DATA_KTP = {
       "Em 1895, foi criado em Newcastle-upon-Tyne um Tabernáculo, o ‘‘The Royal Kent’’, e em 1923, o Grande Colégio (Grand College) foi constituído em Newcastle."
     ],
   },
+  graus: {
+    titulo: "Os graus da Ordem",
+    paragrafos: [
+      "A Ordem controla historicamente trinta e dois graus, dos quais apenas um, o grau 32, de Sacerdote Cavaleiro Templário do Sagrado Arco Real, agora está sendo trabalhado, os demais graus são passados por comunicação e considerados como graus anexos. São eles:",
+    ],
+  },
   simbolismo: [
     {
       Icon: Icon.Arch,
