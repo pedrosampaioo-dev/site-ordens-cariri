@@ -12,21 +12,21 @@ const MEMBROS = [
   {
     cargo: "Excelente Companheiro",
     nome: "Wandson Pereira",
-    foto: "assets/molduras/Moldura_felipe_marcanauta.webp",
+    foto: "assets/molduras/Moldura_wandson_sar.png",
     emblema: "assets/lojas/Emblema_loja_sar.svg",
     cor: { accent: "#B91C1C", glow: "rgba(185,28,28,0.30)", bg: "rgba(185,28,28,0.08)" },
   },
   {
     cargo: "Venerável Mestre",
     nome: "Felipe Bandeira",
-    foto: "assets/molduras/Moldura_felipe_marcanauta.webp",
+    foto: "assets/molduras/Moldura_felipe_marca.png",
     emblema: "assets/lojas/Emblema_loja_marca.svg",
     cor: { accent: "#3B82F6", glow: "rgba(59,130,246,0.30)", bg: "rgba(59,130,246,0.08)" },
   },
   {
     cargo: "Venerável Comandante",
     nome: "Felipe Bandeira",
-    foto: "assets/molduras/Moldura_felipe_marcanauta.webp",
+    foto: "assets/molduras/Moldura_felipe_marca.png",
     emblema: "assets/lojas/Emblema_loja_nautas.svg",
     cor: { accent: "#16A34A", glow: "rgba(22,163,74,0.30)", bg: "rgba(22,163,74,0.08)" },
   },
@@ -40,7 +40,7 @@ const MEMBROS = [
   {
     cargo: "Sumo Sacerdote",
     nome: "Leonardo Monteiro",
-    foto: "assets/molduras/Moldura_felipe_templario.webp",
+    foto: "assets/molduras/Moldura_leonardo_ktp.png",
     emblema: "assets/lojas/Emblema_loja_ktp.svg",
     cor: { accent: "#D97706", glow: "rgba(217,119,6,0.30)", bg: "rgba(217,119,6,0.08)" },
   },
