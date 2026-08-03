@@ -1,98 +1,143 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { SectionLabel } from '../components/shared';
 
 const CRONOGRAMA_DATA = [
+
   {
-    mesId: "jun",
-    nomeOrdem: "Mestres da Marca",
-    cor: { border: "#1E40AF", text: "#93C5FD" },
-    emblema: "assets/insignias_ordens/Ordem_marca.svg",
-    titulo: "Reunião Ordinária — Ordem da Marca",
-    local: "Juazeiro do Norte — CE",
-    diaSemana: "Quarta-feira",
-    dia: "03",
-    mes: "Jun",
-    ano: "2026",
-  },
-  {
-    mesId: "jun",
+    mesId: "ago",
     nomeOrdem: "Sagrado Arco Real",
     cor: { border: "#991B1B", text: "#FCA5A5" },
     emblema: "assets/insignias_ordens/Ordem_sar.svg",
-    titulo: "Sessão do Capítulo do Sagrado Arco Real",
+    titulo: "Cerimônia de Exaltação",
     local: "Juazeiro do Norte — CE",
     diaSemana: "Terça-feira",
-    dia: "17",
-    mes: "Jun",
-    ano: "2026",
-  },
-  {
-    mesId: "jun",
-    nomeOrdem: "Nautas da Arca Real",
-    cor: { border: "#15803D", text: "#86EFAC" },
-    emblema: "assets/insignias_ordens/Ordem_nauta.svg",
-    titulo: "Convenção dos Nautas da Arca Real",
-    local: "Barbalha — CE",
-    diaSemana: "Sábado",
-    dia: "28",
-    mes: "Jun",
-    ano: "2026",
-  },
-  {
-    mesId: "jul",
-    nomeOrdem: "Cavaleiros Templários",
-    cor: { border: "#DC2626", text: "#FCA5A5" },
-    emblema: "assets/insignias_ordens/Ordem_templarios.svg",
-    titulo: "Reunião do Encampamento Templário",
-    local: "Crato — CE",
-    diaSemana: "Quinta-feira",
-    dia: "10",
-    mes: "Jul",
-    ano: "2026",
-  },
-  {
-    mesId: "jul",
-    nomeOrdem: "Cavaleiros de Malta",
-    cor: { border: "#9CA3AF", text: "#E5E7EB" },
-    emblema: "assets/insignias_ordens/Ordem_malta.svg",
-    titulo: "Conclave dos Cavaleiros de Malta",
-    local: "Juazeiro do Norte — CE",
-    diaSemana: "Sexta-feira",
-    dia: "25",
-    mes: "Jul",
+    dia: "11",
+    mes: "Ago",
     ano: "2026",
   },
   {
     mesId: "ago",
-    nomeOrdem: "Sacerdotes Templários (KTP)",
-    cor: { border: "#92400E", text: "#FCD34D" },
-    emblema: "assets/insignias_ordens/Ordem_ktp.svg",
-    titulo: "Encampamento dos Sacerdotes Cavaleiros Templários",
-    local: "Crato — CE",
-    diaSemana: "Sábado",
-    dia: "08",
+    nomeOrdem: "Nautas da Arca Real",
+    cor: { border: "#15803D", text: "#86EFAC" },
+    emblema: "assets/insignias_ordens/Ordem_nauta.svg",
+    titulo: "Cerimônia de Elevação e Eleição da II Gestão",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "25",
     mes: "Ago",
+    ano: "2026",
+  },
+  {
+    mesId: "set",
+    nomeOrdem: "Cavaleiros Templários",
+    cor: { border: "#DC2626", text: "#FCA5A5" },
+    emblema: "assets/insignias_ordens/Ordem_templarios.svg",
+    titulo: "Armadura de Novos Cavaleiros e Eleição da II Gestão",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Sábado",
+    dia: "19",
+    mes: "Set",
+    ano: "2026",
+  },
+  {
+    mesId: "out",
+    nomeOrdem: "Cavaleiros de Malta",
+    cor: { border: "#9CA3AF", text: "#E5E7EB" },
+    emblema: "assets/insignias_ordens/Ordem_malta.svg",
+    titulo: "Armadura de Novos Cavaleiros",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "13",
+    mes: "Out",
+    ano: "2026",
+  },
+  {
+    mesId: "out",
+    nomeOrdem: "Mestres da Marca",
+    cor: { border: "#1E40AF", text: "#93C5FD" },
+    emblema: "assets/insignias_ordens/Ordem_marca.svg",
+    titulo: "Instalação da II Gestão Administrativa",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "27",
+    mes: "Out",
+    ano: "2026",
+  },
+  {
+    mesId: "nov",
+    nomeOrdem: "Nautas da Arca Real",
+    cor: { border: "#15803D", text: "#86EFAC" },
+    emblema: "assets/insignias_ordens/Ordem_nauta.svg",
+    titulo: "Instalação da Nova Gestão",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "10",
+    mes: "Nov",
+    ano: "2026",
+  },
+  {
+    mesId: "nov",
+    nomeOrdem: "Sagrado Arco Real",
+    cor: { border: "#991B1B", text: "#FCA5A5" },
+    emblema: "assets/insignias_ordens/Ordem_sar.svg",
+    titulo: "Preleção e Apresentação de Trabalhos",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "24",
+    mes: "Nov",
+    ano: "2026",
+  },
+  {
+    mesId: "dez",
+    nomeOrdem: "Cavaleiros Templários",
+    cor: { border: "#DC2626", text: "#FCA5A5" },
+    emblema: "assets/insignias_ordens/Ordem_templarios.svg",
+    titulo: "Instalação da Nova Gestão",
+    local: "Juazeiro do Norte — CE",
+    diaSemana: "Terça-feira",
+    dia: "08",
+    mes: "Dez",
     ano: "2026",
   },
 ];
 
 const MESES = [
-  { id: "jun", label: "Junho",  ano: "2026" },
-  { id: "jul", label: "Julho",  ano: "2026" },
-  { id: "ago", label: "Agosto", ano: "2026" },
+  { id: "ago", label: "Agosto",    ano: "2026" },
+  { id: "set", label: "Setembro",  ano: "2026" },
+  { id: "out", label: "Outubro",   ano: "2026" },
+  { id: "nov", label: "Novembro",  ano: "2026" },
+  { id: "dez", label: "Dezembro",  ano: "2026" },
 ];
 
 const cardVariant = {
-  hidden: { opacity: 0, x: -32 },
+  hidden: { opacity: 0, y: 8 },
   show: (i) => ({
-    opacity: 1, x: 0,
-    transition: { duration: 0.75, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    opacity: 1, y: 0,
+    transition: { duration: 0.35, delay: Math.min(i, 4) * 0.045, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
+const MES_IDS_POR_INDICE = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+
+function getMesInicialId() {
+  const hoje = new Date();
+  const mesAtualId = MES_IDS_POR_INDICE[hoje.getMonth()];
+  const anoAtual = hoje.getFullYear();
+
+  const mesAtual = MESES.find(m => m.id === mesAtualId && Number(m.ano) === anoAtual);
+  if (mesAtual) return mesAtual.id;
+
+  const proximoDisponivel = MESES.find(m => {
+    const ano = Number(m.ano);
+    return ano > anoAtual || (ano === anoAtual && MES_IDS_POR_INDICE.indexOf(m.id) >= hoje.getMonth());
+  });
+  return (proximoDisponivel ?? MESES[MESES.length - 1])?.id ?? MESES[0]?.id;
+}
+
 export default function Cronograma() {
-  const [activeMes, setActiveMes] = useState("jun");
+  const [activeMes, setActiveMes] = useState(getMesInicialId);
+  const prefersReducedMotion = useReducedMotion();
 
   const eventos = CRONOGRAMA_DATA.filter(c => c.mesId === activeMes);
 
@@ -141,7 +186,8 @@ export default function Cronograma() {
           <div
             role="tablist"
             aria-label="Filtrar por mês"
-            className="flex gap-0.5"
+            className="flex gap-0.5 overflow-x-auto"
+            style={{ scrollbarWidth: "none" }}
           >
             {MESES.map((mes) => {
               const isActive = activeMes === mes.id;
@@ -151,7 +197,7 @@ export default function Cronograma() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveMes(mes.id)}
-                  className="relative px-5 py-3 focus:outline-none transition-colors duration-200"
+                  className="relative shrink-0 px-3 sm:px-5 py-3 focus:outline-none transition-colors duration-200"
                   style={{
                     color: isActive ? "#E6BF52" : "rgba(251,191,36,0.35)",
                     backgroundColor: isActive ? "rgba(230,191,82,0.07)" : "transparent",
@@ -164,10 +210,10 @@ export default function Cronograma() {
                     if (!isActive) e.currentTarget.style.color = "rgba(251,191,36,0.35)";
                   }}
                 >
-                  <span className="font-display text-sm sm:text-base tracking-[0.15em] uppercase">
+                  <span className="font-display text-xs sm:text-base tracking-[0.1em] sm:tracking-[0.15em] uppercase whitespace-nowrap">
                     {mes.label}
                   </span>
-                  <span className="font-display text-[9px] tracking-[0.2em] text-amber-50/30 ml-2">
+                  <span className="hidden sm:inline font-display text-[9px] tracking-[0.2em] text-amber-50/30 ml-2">
                     {mes.ano}
                   </span>
                 </button>
@@ -178,13 +224,14 @@ export default function Cronograma() {
         </motion.div>
 
         {/* Grid de eventos */}
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={activeMes}
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            layout={!prefersReducedMotion}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
           >
             {eventos.length === 0 ? (
               <div
@@ -202,9 +249,9 @@ export default function Cronograma() {
                     key={`${activeMes}-${i}`}
                     custom={i}
                     variants={cardVariant}
-                    initial="hidden"
+                    initial={prefersReducedMotion ? "show" : "hidden"}
                     animate="show"
-                    className="group relative flex items-stretch overflow-hidden border transition-all duration-300 hover:-translate-y-0.5"
+                    className="group relative flex items-stretch overflow-hidden border transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-0.5"
                     style={{ borderColor: c.cor.border + "45", background: "rgba(13,2,3,0.55)" }}
                     onMouseEnter={e => {
                       e.currentTarget.style.borderColor = c.cor.border + "99";
