@@ -8,7 +8,6 @@ const DATA_MARCA = {
   ink: "prata",
   titulo: "Ordem de Mestres Maçons da Marca",
   subtitulo: "A assinatura do obreiro sobre a pedra",
-  classificacao: "Grau Capitular · Rito de York",
   emblema: "assets/insignias_ordens/Ordem_marca.svg",
   queE: {
     titulo: "Da pedreira medieval às Lojas Maçônicas",

@@ -7,13 +7,11 @@ const DATA_SAR = {
   theme: "vermelho",
   titulo: "Ordem do Sagrado Arco Real de Jerusalém",
   subtitulo: "Onde a Palavra Perdida é restaurada",
-  classificacao: "Grau Capitular · Culminância do Rito de York",
   emblema: "assets/insignias_ordens/Ordem_sar.svg",
   queE: {
     titulo: "O grau que completa o Mestre",
     paragrafos: [
       "Há, na tradição do Rito de York, um ensinamento secreto: o grau de Mestre Maçom não está completo. Há uma palavra perdida, há uma verdade enterrada, há um nome sagrado que foi ocultado para que não fosse profanado nem esquecido. O Sagrado Arco Real é o grau onde esta Palavra finalmente é restaurada ao obreiro.",
-      "Diz a alegoria que, durante a reconstrução do Templo de Jerusalém após o exílio babilônico — sob Zorobabel, Esdras e o sumo-sacerdote Josué —, três obreiros, ao escavar as ruínas, descobriram uma abóbada subterrânea. Nela, gravado em ouro, jazia o Nome Inefável. A Palavra estava no fim, porque estava também no princípio.",
       "Por isso, o Arco Real é tido por muitos irmãos como o coroamento luminoso do Rito — a chave de abóbada que sustenta todos os graus anteriores.",
     ],
   },

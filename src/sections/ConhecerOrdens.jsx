@@ -6,7 +6,6 @@ export const ORDENS_DATA = [
     id: "marca",
     nome: "Ordem de Mestres Maçons da Marca",
     nomeAbreviado: "Mestres da Marca",
-    classificacao: "Grau Capitular · Rito de York",
     descricao:
       "A marca individual do obreiro sobre a pedra — assinatura do trabalho honesto e do compromisso inabalável com tudo que se constrói.",
     emblema: "assets/insignias_ordens/Ordem_marca.svg",
@@ -17,9 +16,8 @@ export const ORDENS_DATA = [
     id: "nautas",
     nome: "Ordem dos Nautas da Arca Real",
     nomeAbreviado: "Nautas da Arca Real",
-    classificacao: "Ordem Anexa · Rito de York",
     descricao:
-      "Marinheiros da Arca Real — alegoria do dilúvio, do refúgio e da aliança renovada entre o Criador e o homem sob o arco do céu.",
+      "Nautas da Arca Real — alegoria do dilúvio, do refúgio e da aliança renovada entre o Criador e o homem sob o arco do céu.",
     emblema: "assets/insignias_ordens/Ordem_nauta.svg",
     fundo: "assets/fundo_verde.svg",
     cor: { border: "#15803D", text: "#86EFAC" },
@@ -28,9 +26,8 @@ export const ORDENS_DATA = [
     id: "sar",
     nome: "Ordem do Sagrado Arco Real de Jerusalém",
     nomeAbreviado: "Sagrado Arco Real",
-    classificacao: "Grau Capitular · Coroamento da Mestria",
     descricao:
-      "Onde a Palavra Perdida é restaurada e a pedra angular se revela. O culminar luminoso do Rito e a chave de toda a abóbada simbólica.",
+      "Onde a Palavra Perdida é restaurada e a pedra angular se revela. O culminar luminoso e a chave de toda a abóbada simbólica.",
     emblema: "assets/insignias_ordens/Ordem_sar.svg",
     fundo: "assets/fundo_vermelho.svg",
     cor: { border: "#991B1B", text: "#FCA5A5" },
@@ -39,7 +36,6 @@ export const ORDENS_DATA = [
     id: "malta",
     nome: "Ordem dos Cavaleiros de Malta",
     nomeAbreviado: "Cavaleiros de Malta",
-    classificacao: "Ordem Cavaleiresca · Rito de York",
     descricao:
       "Herdeiros dos Hospitalários de São João — a cruz de oito pontas e a hospitalidade como virtude iniciática em defesa dos peregrinos.",
     emblema: "assets/insignias_ordens/Ordem_malta.svg",
@@ -50,7 +46,6 @@ export const ORDENS_DATA = [
     id: "templarios",
     nome: "Ordem dos Cavaleiros Templários",
     nomeAbreviado: "Cavaleiros Templários",
-    classificacao: "Ordem Cavaleiresca · Coroação do Rito de York",
     descricao:
       "Herdeiros simbólicos do Templo de Salomão — fé, espada e a cruz vermelha em defesa da virtude cristã e da palavra empenhada.",
     emblema: "assets/insignias_ordens/Ordem_templarios.svg",
@@ -61,9 +56,8 @@ export const ORDENS_DATA = [
     id: "ktp",
     nome: "Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real",
     nomeAbreviado: "Sacerdotes Templários",
-    classificacao: "Ordem Sacerdotal · Cume do Rito de York",
     descricao:
-      "A síntese do Arco e do Templo — sacerdote e cavaleiro num só irmão, guardião dos mais elevados mistérios do Rito de York.",
+      "A síntese do Arco e do Templo — sacerdote e cavaleiro num só irmão.",
     emblema: "assets/insignias_ordens/Ordem_ktp.svg",
     fundo: "assets/fundo_vermelho.svg",
     cor: { border: "#92400E", text: "#FCD34D" },

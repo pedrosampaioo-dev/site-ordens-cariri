@@ -7,8 +7,7 @@ const DATA_MALTA = {
   theme: "preto",
   ink: "prata",
   titulo: "Ordem dos Cavaleiros de Malta",
-  subtitulo: "Guardiões da fé e servos dos pobres",
-  classificacao: "Ordem Cavaleiresca · Rito de York",
+  subtitulo: "Guardiões da fé",
   emblema: "assets/insignias_ordens/Ordem_malta.svg",
   queE: {
     titulo: "Do Hospital de Jerusalém ao cavaleiro do Rito",

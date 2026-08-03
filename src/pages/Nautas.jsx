@@ -5,9 +5,8 @@ const DATA_NAUTAS = {
   id: "nautas",
   numero: "II",
   theme: "verde",
-  titulo: "Ordem dos Nautas da Arca Real",
+  titulo: "Os Nautas da Arca Real",
   subtitulo: "Os Marinheiros da Arca Real — guardiões da aliança",
-  classificacao: "Ordem Anexa · Rito de York",
   emblema: "assets/insignias_ordens/Ordem_nauta.svg",
   queE: {
     titulo: "A Arca, o Dilúvio e a aliança renovada",

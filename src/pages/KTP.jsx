@@ -6,15 +6,14 @@ const DATA_KTP = {
   numero: "VI",
   theme: "vermelho",
   titulo: "Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real",
-  subtitulo: "O sacerdote e o cavaleiro — a síntese do Rito",
-  classificacao: "Ordem Sacerdotal · Cume do Rito de York",
+  subtitulo: "O sacerdote e o cavaleiro",
   emblema: "assets/insignias_ordens/Ordem_ktp.svg",
   queE: {
     titulo: "Onde o Templo e o Arco se fundem no sacerdote-cavaleiro",
     paragrafos: [
-      "A Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real representa, no sistema do Rito de York, a síntese mais elevada entre o percurso capitular — culminado no Sagrado Arco Real — e o caminho cavaleiresco — coroado pelos Templários e por Malta. Em seu grau, o irmão é ordenado ao mesmo tempo guardião da Palavra restaurada e cavaleiro em vigília permanente.",
-      "O sacerdote do Templo de Salomão e o cavaleiro do Templo cristão fundem-se numa só figura: aquele que conhece o Nome e o guardou; que carrega a espada e a dobra; que leu as lâminas de ouro e as colocou novamente no silêncio da câmara secreta. Este é o irmão KTP.",
-      "Entre todas as Ordens do Rito de York no Cariri, a KTP representa o último pórtico — aquele ao qual não se adentra por ambição, mas por vocação. É oferecida ao irmão que, tendo percorrido todos os graus anteriores com fidelidade e discrição, manifesta no silêncio a maturidade que as palavras não poderiam descrever.",
+      "A Ordem dos Sacerdotes Cavaleiros Templários do Sagrado Arco Real, ou no original, Holy Royal Arch Knight Templar Priests (KTP) é uma Ordem de Aperfeiçoamento Maçônica que possui registros desde o final do século XVIII.",
+      "Conta-se que, nessa época, os Cavaleiros Templários de diferentes localidades juntavam-se como um ‘‘Grupo de União’’ com o objetivo de conferir esse Grau, mas não havia um corpo governante para exercer controle e fornecer diretrizes, o que contribuiu em grande parte para a sua confusa origem.",
+      "Em 1895, foi criado em Newcastle-upon-Tyne um Tabernáculo, o ‘‘The Royal Kent’’, e em 1923, o Grande Colégio (Grand College) foi constituído em Newcastle."
     ],
   },
   simbolismo: [

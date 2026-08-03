@@ -175,7 +175,7 @@ export default function Hero() {
           className="font-body text-base sm:text-[1.0625rem] text-amber-50/65 max-w-[34rem] leading-relaxed mb-10 sm:mb-12"
           variants={item}
         >
-          Seis Ordens de Aperfeiçoamento Maçônico do Rito de York, reunidas no Vale do Cariri — elevando Irmãos que buscam ir além do grau simbólico.
+          Seis Ordens de Aperfeiçoamento Maçônico, reunidas no Vale do Cariri — elevando Irmãos que buscam ir além do grau simbólico.
         </motion.p>
 
         {/* CTAs — acima do fold */}

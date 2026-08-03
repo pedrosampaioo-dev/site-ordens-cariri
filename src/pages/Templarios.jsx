@@ -8,7 +8,6 @@ const DATA_TEMPLARIOS = {
   ink: "prata",
   titulo: "Ordem dos Cavaleiros Templários",
   subtitulo: "Herdeiros simbólicos do Templo de Salomão",
-  classificacao: "Ordem Cavaleiresca · Coroação do Rito de York",
   emblema: "assets/insignias_ordens/Ordem_templarios.svg",
   queE: {
     titulo: "Do Templo histórico ao Templo do coração",
